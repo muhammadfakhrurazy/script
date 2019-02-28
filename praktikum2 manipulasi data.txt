@@ -1,0 +1,35 @@
+> create database pratikum3;
+> use pratikum3;
+> create table mahasiswa
+-> (nim int(10) primary key,
+-> nama varchar(20) not null,
+-> alamatjalan varchar(20) not null,
+-> kota varchar(20),
+-> kodepos int(10),
+-> nohp int(10),
+-> jenis_kelamin varchar(15) not null,
+-> tanggal_lahir date not null);
+
+> insert into mahasiswa
+-> (nim,nama,alamat_jalan,kota,kode_pos,no_hp,jenis_kelamin,tanggal_lahir) 
+-> values
+-> ('11223341','fahrul','bekasi','Laki-laki','1999-09-07'),
+-> ('11223342','Anggi','Cikarang','perempuan','2000-01-02'),
+-> ('11223343','putri','bekasi','Perempuan','1999-04-03'),
+-> ('11223344','wiwi','karawang','Perempuan','1998-09-10'),
+-> ('11223345','panjul','Bekasi','laki-laki','197-02-09'),
+-> ('11223346','rifki','bekasi','Laki-laki','2000-09-06'),
+
+> update mahasiswa set tanggal_lahir = '2000-01-02' where nim = '11223341';
+> select * from mahasiswa where nim = '11223341';
+> delete from mahasiswa where nim = '11223346';
+> select * from mahasiswa where tanggal_lahir >= '1996-01-02';
+> select * from mahasiswa where kota = 'Bekasi' and jenis_kelamin = 'Perempuan';
+> select nama,tanggal_lahir,jenis_kelamin
+-> from mahasiswa
+-> where tanggal_lahir > 22
+-> and jenis_kelamin = 'Perempuan'
+-> order by nama;
+> select nama,alamat_jalan from mahasiswa where nim;
+> select * from mahasiswa order by nama desc;
+> select * from mahasiswa order by nama asc;
